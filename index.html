@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Web tutorials">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+          opacity: 0;
+        }
+  
+        @keyframes fadein {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      </style>
+</head>
+<body onload="demo()">
+    <div class="block" id="block">
+        <img src="images/blue.png" alt="blue" id="blue" width="70px" onclick="burst('blue')" style="width: 100%; opacity: 1" />
+        <img src="images/green.png" alt="green" id="green" width="70px" onclick="burst('green')" style="width: 100%; opacity: 1" />
+        <img src="images/orange.png" alt="orange" id="orange" width="70px" onclick="burst('orange')" style="width: 100%; opacity: 1" />
+        <img src="images/red.png" alt="red" id="red" width="70px" onclick="burst('red')" style="width: 100%; opacity: 1" />
+        <img src="images/gray.png" alt="gray" id="gray" width="70px" onclick="burst('gray')" style="width: 100%; opacity: 1" />
+    </div>
+    <div class="dock">
+        <div class="reset-dock">
+            <img id="reset" onclick="location.reload()" src="images/reset.png" alt="reset">
+        </div>
+        <div class="balloon-dock">
+            <h1 id="balloon-color">Color</h1>
+        </div>
+        <div class="score-board">
+            <h1 id="score">0</h1>
+        </div>
+    </div>
+    <script>
+        function demo() {
+          const style = document.createElement("style");
+          style.innerHTML = `
+      *:not(img) {opacity: 0; animation: fadein 0s forwards}
+    `;
+          document.documentElement.appendChild(style);
+        }
+      </script>
+</body>
+<script type="text/javascript" src="app.js"></script>
+</html>
